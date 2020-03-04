@@ -1,0 +1,12 @@
+Script para ocultar linhas em branco de um documento, com a finalidade de imprimir documentos que saem com o arquivo interno.
+
+function hidelines() {
+  
+  var spreadsheet = SpreadsheetApp.getActive();
+  var ss = spreadsheet.getSheetByName('Exemplo'); //Nomear "exemplo" com o nome da planilha
+  var row = ss.getLastRow()+1; //Pega a última célula com valor e adiciona +1 
+  var max = (ss.getMaxRows())-(ss.getLastRow());  //Subtrai a quantidade máxima de linhas da planilha menos a quantidade de dados preenchidos
+ 
+  ss.showRows(row,max);
+ 
+}
